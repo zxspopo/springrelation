@@ -1,6 +1,12 @@
 package com.sr.demo.controller;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sr.demo.entity.FavUser;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 /**
  * Created by Administrator on 2015/5/24.

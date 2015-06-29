@@ -20,7 +20,7 @@ public class DemoController {
     @Autowired
     private FavUserRespository favUserRespository;
 
-    @RequestMapping("saveFavUser")
+    @RequestMapping(value = "saveFavUser",method = RequestMethod.POST)
     public FavUser createUser(@RequestBody String body) {
 
         ObjectMapper mapper = new ObjectMapper();
@@ -40,12 +40,12 @@ public class DemoController {
         return favUser;
     }
 
-    @RequestMapping(value = "/getUserName", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUserName", method = RequestMethod.GET)
     public String getUserName(@RequestParam(value = "name") String name) {
         return name;
     }
 
-    @RequestMapping("getFavUser")
+    @RequestMapping(value = "getFavUser",method = RequestMethod.GET)
     public FavUser getFavUser(@RequestParam("userName") String userName, String userId, int userAge) {
         FavUser favUser = new FavUser();
         favUser.setUserId(userId);
@@ -54,7 +54,7 @@ public class DemoController {
         return favUser;
     }
 
-    @RequestMapping("getFavUserBody")
+    @RequestMapping(value = "getFavUserBody",method = RequestMethod.GET)
     public FavUser getFavUserBody(@RequestBody String body) {
         ObjectMapper mapper = new ObjectMapper();
         FavUser favUser = null;
